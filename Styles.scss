@@ -1,0 +1,170 @@
+$bg-color:#e7e7de;
+$mian-nav:#2A9D8F;
+$hover-nav:#008891;
+$text-color:#264653;
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+/* $bg-color:#1b262c;
+$mian-nav:#3282b8;
+$hover-nav:#0f4c75;
+$text-color:#bbe1fa; */
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  height: 100vh;
+  color: $text-color;
+}
+
+body
+{
+  background-color: #e7e7de;
+  font-family: "Ubuntu", sans-serif;
+  background-image: url(bg.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.navbar
+{
+  background-color: transparent !important;
+  .navbar-toggler-icon
+  {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,88,122, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  .nav-link 
+  {
+    color: $mian-nav !important;
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+  }
+  .nav-link:hover
+  {
+    color: $hover-nav !important;
+  }
+}
+
+#home
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem 0 3rem 0;
+    text-align: center;
+    overflow: hidden;
+    h4 
+    {
+      animation: h4Move 1.5s;
+    }
+    h5
+      {
+            animation: h5Move 2.3s ;
+        }
+    h1 
+        {
+            animation: h1Move 2.3s;
+        }
+}
+@keyframes h5Move {
+    0%{
+        transform: translate(0px, 75px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translate(0px, 0px);
+        opacity: 1px;
+    }
+    
+}
+@keyframes h1Move {
+    0%{
+        transform: translate(-100px, 0);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translate(0px, 0px);
+        opacity: 1px;
+    }
+    
+}
+@keyframes h4Move {
+  0%{
+    transform: translate(0px, -50px);
+      opacity: 0;
+  }
+
+  100%{
+    transform: translate(0px, 0px);
+      opacity: 1px;
+  }
+  
+}
+
+
+/*Aboutme*/
+
+#about,#skills
+{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 2rem;
+  margin: 2rem 0;
+        
+      img 
+      {
+        height: 400px;
+      }
+      
+      article 
+      {
+        line-height: 2rem;
+        padding: 2rem;
+
+        h3 
+        {
+          text-transform: capitalize;
+          border-left: 15px $mian-nav solid;
+          padding-left: 10px;
+          margin-bottom: 2rem;
+        }
+
+        b 
+        {
+          color: #E76F51;
+        }
+        
+      }
+}
+
+
+#skills article {
+        
+  ul {
+        list-style: none;
+
+        li i
+        {
+            font-size: 26px;
+            margin-right: 15px;
+        }
+      }
+}
+
+@media(max-width:960px)
+{
+  #about,#skills
+  {
+    display: block;
+    grid-template-columns:none;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+
