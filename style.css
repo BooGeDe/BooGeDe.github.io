@@ -9,15 +9,15 @@ html {
 
 section {
   height: 100vh;
-  color: #264653;
+  color: white;
 }
 
 body {
-  background-color: #e7e7de;
+  background-color: #092B40;
   font-family: "Ubuntu", sans-serif;
-  background-image: url(bg.png);
-  background-size: cover;
-  background-attachment: fixed;
+  /* background-image: url(bg.png);
+    background-size: cover;
+    background-attachment: fixed; */
 }
 
 .navbar {
@@ -27,12 +27,13 @@ body {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,88,122, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 .navbar .nav-link {
-  color: #2A9D8F !important;
+  color: #93a2ac !important;
   font-weight: bold;
   transition: all 0.5s ease-in-out;
 }
-.navbar .nav-link:hover {
-  color: #008891 !important;
+.navbar .nav-link:hover, .navbar .nav-link:active, .navbar .active {
+  color: white !important;
+  text-shadow: 0 0 5px #fff;
 }
 
 #home {
@@ -49,9 +50,12 @@ body {
 }
 #home h5 {
   animation: h5Move 2.3s;
+  color: #D96F32;
 }
 #home h1 {
   animation: h1Move 2.3s;
+  font-size: xxx-large;
+  font-size: -webkit-xxx-large;
 }
 
 @keyframes h5Move {
@@ -87,8 +91,7 @@ body {
 /*Aboutme*/
 #about, #skills {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  grid-template-columns: 1fr 2fr;
   margin: 2rem 0;
 }
 #about img, #skills img {
@@ -97,15 +100,22 @@ body {
 #about article, #skills article {
   line-height: 2rem;
   padding: 2rem;
+  font-size: larger;
 }
 #about article h3, #skills article h3 {
   text-transform: capitalize;
-  border-left: 15px #2A9D8F solid;
   padding-left: 10px;
   margin-bottom: 2rem;
+  font-size: xx-large;
+  border-left: 0px solid #D96F32;
+  transition: all 0.5s ease-in-out;
+}
+#about article h3:hover, #skills article h3:hover {
+  border-left: 10px solid #D96F32;
 }
 #about article b, #skills article b {
-  color: #E76F51;
+  text-transform: capitalize;
+  color: #D96F32;
 }
 
 #skills article ul {
@@ -114,6 +124,63 @@ body {
 #skills article ul li i {
   font-size: 26px;
   margin-right: 15px;
+}
+
+#portfolio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#portfolio h3 {
+  padding-top: 5%;
+}
+#portfolio #projectsContainer {
+  background: white;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+#portfolio #projectsContainer .project {
+  border: 1px solid #e9ecef;
+  margin: 5%;
+  max-height: 410px;
+  box-shadow: 0 0 5px #ddd;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+}
+#portfolio #projectsContainer .project .cardImg {
+  height: 70%;
+}
+#portfolio #projectsContainer .project .cardFooter {
+  height: 30%;
+}
+#portfolio #projectsContainer .project .cardFooter .row {
+  margin: 0 !important;
+}
+#portfolio #projectsContainer .project .cardFooter div:first-of-type {
+  padding: 10px;
+  font-size: larger;
+}
+#portfolio #projectsContainer .project .cardFooter div:first-of-type span {
+  margin: 0 5px;
+  padding: 0.6em !important;
+  padding-right: 0.8em !important;
+  padding-left: 0.8em !important;
+}
+#portfolio #projectsContainer .project .cardFooter div:first-of-type #html {
+  background: #e2603d;
+}
+#portfolio #projectsContainer .project .cardFooter div:first-of-type #css {
+  background: #2280bf;
+}
+#portfolio #projectsContainer .project .cardFooter div:first-of-type #js {
+  background: #e5ca47;
+}
+#portfolio #projectsContainer .project:hover {
+  box-shadow: 0 0 25px #ddd;
+  cursor: pointer;
 }
 
 @media (max-width: 960px) {
