@@ -182,14 +182,71 @@ body
 
   #projectsContainer
   {
-    background: white;
     width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    
+    .project::before 
+    {
+      height: 100%;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: #00000000;
+      
+      width: 100%;
+      transition: all 0.3s;
+    }
+    .project:hover
+    {
+      cursor: pointer;
+    }
+    .project:hover::before  
+    {
+      background: #0000007a;
+    }
+
+    .project:hover .Data
+    
+    {
+      transform: translateY(0)
+    }
 
     .project
     {
+      background-color: #fff;
+      min-height: 540px;
+      position: relative;
+      overflow: hidden;
+      width: 50%;
+      min-width: 360px;
+      max-width: 450px;
+      margin: 2em;
+      box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 20%);
+background: url('./screens/game.PNG') center / cover no-repeat;
+
+
+      .Data
+      {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        transition: transform 0.3s;
+        transform: translateY(calc(150px + 4em))
+      }
+      
+  }
+      
+      
+      
+      
+      
+      
+      /* 
     border: 1px solid #e9ecef;
     margin: 5%;
     max-height: 410px;
@@ -200,6 +257,12 @@ body
     .cardImg
     {
       height: 70%;
+
+      img{
+        width: 100%;
+        height: 100%;
+      }
+
     }
 
     .cardFooter
@@ -232,17 +295,13 @@ body
       }
     }
 
-    }
+    */ }
 
-    .project:hover
-    {
-      box-shadow: 0 0 25px #ddd;
-      cursor: pointer;
-    }
+  
 
     
   }
-}
+
 @media(max-width:960px)
 {
   #about,#skills
