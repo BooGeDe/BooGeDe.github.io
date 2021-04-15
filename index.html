@@ -12,9 +12,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Abderlrahman Taha</title>
   </head>
   <body>
+
+    <div class="overlay">
+        
+        <h4>this is a working progress . . . .<br> and will always be ;)</h4>
+        <div class="loadingContainer">
+
+                <div class="loader"></div>
+                <div class="loader"></div>
+                <div class="loader"></div>
+        </div>
+    </div>
     <nav class="navbar navbar-dark navbar-expand-sm bg-primary sticky-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
@@ -26,6 +38,8 @@
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                 <li class="nav-item"><a class="nav-link" href="#portfolio">portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#playground">playground</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">contact me</a></li>
             </ul>
         </div>                   
         </div>
@@ -38,9 +52,9 @@
             <h5>a Frontend Developer</h5>
         </section>
         <!--About-->
-        <section class="align-items-center" id="about">
-            <img src="web-dev-2.png">
-            <article>
+        <section class="align-items-center "   id="about">
+            <img src="web-dev-2.png" data-aos="fade-right">
+            <article data-aos="fade-left">
                 <h3>About me</h3>
                 <span><b>A Computer science graduate ,</b></span>
                 <p><b>Innovative</b> meticulous front-end developer with a lot of passion for
@@ -72,41 +86,165 @@
 
 <!--Portfolio-->
         <section class="align-items-center" id="portfolio">
-            <h3>Portfolio</h3>
-            <div id="projectsContainer">
-                <div class="project">
+            <h3 data-aos="fade-down">Portfolio</h3>
+            <div id="projectsContainer" data-aos="fade-up">
+                <div class="project" data-aos="zoom-in">
                     <div class="header">
                         <div class="title">
-                            <span>Pig Game</span>
+                            <span class="badge">Ingredients Inventory</span>
                         </div>
                     </div>
                     <div class="Data">
                         <div class="content">
-<span>Html</span><span>css</span><span>js</span>
-<h3 class="desc">A game in which each player roll the dice and choose whether to roll again or save this number 
-    if he roll a zero he will lose his score else he adds to his score , the first to get to a pre set score wins
-</h3>
+<span class="badge badge-pill" style="
+    background: #e2603d;
+">Html</span><span class="badge badge-pill" style="
+    background: #2280bf;
+">css</span><span class="badge badge-pill" style="
+    background: #e5ca47;
+">js</span>
+<span class="badge badge-pill" style="
+    background: #61DBFB;
+">React.js</span>
+<span class="badge badge-pill" style="
+    background: #3c873a;
+">NodeJS</span>
+<h3 class="desc">A management system for the IT department for keeping records of
+    devices and users also creating reports and purchase requests.
+    </div>
+                    </div>
+                </div>
+                <div class="project" data-aos="zoom-in">
+                    <div class="header">
+                        <div class="title">
+                            <span class="badge">D-rays</span>
+                        </div>
+                    </div>
+                    <div class="Data">
+                        <div class="content">
+<span class="badge badge-pill" style="
+    background: #e2603d;
+">Html</span><span class="badge badge-pill" style="
+    background: #2280bf;
+">css</span><span class="badge badge-pill" style="
+    background: #e5ca47;
+">js</span>
+<h3 class="desc">A system helps Doctors to view and make reports for x-ray studies remotely
+    and the hospital can download them when they are done.my role was
+    designing the system interface from scratch.
+    </h3>
                         </div>
                     </div>
                 </div>
-                <div class="project">
-
+                <div class="project" data-aos="zoom-in">
+                    <div class="header">
+                        <div class="title">
+                            <span class="badge">Color Picking Game</span>
+                        </div>
+                    </div>
+                    <div class="Data">
+                        <div class="content">
+<span class="badge badge-pill" style="
+    background: #e2603d;
+">Html</span><span class="badge badge-pill" style="
+    background: #2280bf;
+">css</span><span class="badge badge-pill" style="
+    background: #e5ca47;
+">js</span>
+<h3 class="desc">A game lets the player guess the color based on the RGB value given to
+    him. The game has two difficulty levels, easy gives the player only 3 colors
+    to guess from and hard level gives the user 6 colors</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="project">
+                
+        </section>
 
-                </div>
-                <div class="project">
 
+        <!--Playground-->
+<section class="align-items-center" id="playground">
+    <h3 data-aos="fade-down">Playground</h3>
+    <div id="playContainer">
+        <div class="playProject" data-aos="zoom-in">
+            <div class="header">
+                <div class="title">
+                    <span class="badge">To-Do list</span>
                 </div>
             </div>
-        </section>
+            <div class="Data">
+                <div class="content">
+<span class="badge badge-pill" style="
+background: #e2603d;
+">Html</span><span class="badge badge-pill" style="
+background: #2280bf;
+">css</span><span class="badge badge-pill" style="
+background: #e5ca47;
+">js</span>
+
+<h3 class="desc">A simple Modern To-do list</h3>
+                </div>
+            </div>
+        </div>
+        <div class="playProject" data-aos="zoom-in">
+            <div class="header">
+                <div class="title">
+                    <span class="badge">Loading</span>
+                </div>
+            </div>
+            <div class="Data">
+                <div class="content">
+<span class="badge badge-pill" style="
+background: #e2603d;
+">Html</span><span class="badge badge-pill" style="
+background: #2280bf;
+">css</span>
+<h3 class="desc">simple loading animation
+</h3>
+                </div>
+            </div>
+        </div>
     </div>
+    <a href="https://codepen.io/boogede"  target="#" class="button">See more</a>
+</section>
 
 
-
-<!--Porfolio-->
-<!--Playground-->
 <!--contact-->
+
+
+<section id="contact">
+    <div>
+    <h2>Let's work together...</h2>
+    <p>How do you take your coffee?</p>
+  </div>
+  <div class="contact-links">
+    <a
+      href="https://www.facebook.com/BoUoDe"
+      target="_blank"
+      
+      ><i class="fab fa-facebook-square"></i>Facebook</a
+    >
+    <a
+      id="profile-link"
+      href="https://github.com/BooGeDe"
+      target="_blank"
+      ><i class="fab fa-github"></i>GitHub</a
+    >
+    <a
+      href="https://www.linkedin.com/in/abd-elrahman-ahmed-8835b9180/"
+      target="_blank"
+      ><i class="fab fa-linkedin"></i>Linkedin</a
+    >
+    <a href="mailto:ab.ahmed.t@gmail.com"
+      ><i class="fas fa-at"></i> Send a mail</a
+    >
+    <a href="tel:01227942783"
+      ><i class="fas fa-mobile-alt"></i>Call me : 01227942783</a
+    >
+  </div>
+</section>
+
+
+    </div>
 
 <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
@@ -115,9 +253,20 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
 
+/* $( document ).ready(function() {
+    
+    let load = document.querySelector('.overlay');
+    load.style.animmation = 'fadeOut 0.3';
+
+}); */
+
+AOS.init({
+    offset:400,
+    duration:1000
+});
 
 var home = $('#home').offset().top;
 var about = $('#about').offset().top;

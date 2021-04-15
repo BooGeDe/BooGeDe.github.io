@@ -115,6 +115,7 @@ body
 
 #about,#skills
 {
+  height: fit-content;
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin: 2rem 0;
@@ -170,8 +171,9 @@ body
 
 
 
-#portfolio
+#portfolio,#playground
 {
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,7 +182,7 @@ body
     padding-top: 5%;
   }
 
-  #projectsContainer
+  #projectsContainer,#playContainer
   {
     width: 100%;
     height: fit-content;
@@ -189,7 +191,7 @@ body
     flex-wrap: wrap;
 
     
-    .project::before 
+    .project::before , .playProject::before 
     {
       height: 100%;
       content: "";
@@ -201,22 +203,69 @@ body
       width: 100%;
       transition: all 0.3s;
     }
-    .project:hover
+
+    .playProject:first-of-type
+    {
+      background: url('./screens/toDoPNG.PNG') center / cover no-repeat;
+    }
+
+    .playProject:nth-child(2)
+    {
+      background: url('./screens/loading.PNG') center / cover no-repeat;
+    }
+
+    .project:first-of-type
+    {
+      background: url('./screens/Ing2.PNG') center / cover no-repeat;
+      
+      .Data
+      {
+        transform: translateY(calc(82px + 4em));
+      }
+    
+    }
+
+    .project:nth-child(2)
+    {
+      background: url('./screens/D-rays2.PNG') center / cover no-repeat;
+
+      .Data 
+      {
+        transform: translateY(calc(180px + 4em));
+      }
+    }
+
+    .project:nth-child(3)
+    {
+      background: url('./screens/color1.PNG') center / cover no-repeat;
+
+      .Data 
+      {
+        transform: translateY(calc(180px + 4em));
+      }
+    
+    }
+
+    .project:hover,.playProject:hover
     {
       cursor: pointer;
     }
-    .project:hover::before  
+    .project:hover::before  ,.playProject:hover::before
     {
       background: #0000007a;
     }
 
-    .project:hover .Data
+    .project:hover .Data , .playProject:hover .Data
     
     {
       transform: translateY(0)
     }
 
-    .project
+
+   
+    
+
+    .project ,.playProject
     {
       background-color: #fff;
       min-height: 540px;
@@ -227,8 +276,17 @@ body
       max-width: 450px;
       margin: 2em;
       box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 20%);
-background: url('./screens/game.PNG') center / cover no-repeat;
 
+      .title 
+      {
+        margin: 1rem;
+
+        span 
+        {
+          background: #092b40;
+          padding: 0.5em;
+        }
+      }
 
       .Data
       {
@@ -236,72 +294,109 @@ background: url('./screens/game.PNG') center / cover no-repeat;
         bottom: 0;
         width: 100%;
         transition: transform 0.3s;
-        transform: translateY(calc(150px + 4em))
+        transform: translateY(calc(150px + 4em));
+
+
+        .content 
+        {
+          padding:0 10px;
+        
+
+          span{   
+             box-shadow: 0px 0px 15px rgb(0 0 0 / 30%), 1px 4px 10px rgb(0 0 0 / 20%);
+            padding: 9px 20px;
+            margin-right: 0.8em;
+            border-radius: 10rem;
+            text-transform: uppercase;
+          }
+        }
       }
       
   }
-      
-      
-      
-      
-      
-      
-      /* 
-    border: 1px solid #e9ecef;
-    margin: 5%;
-    max-height: 410px;
-    box-shadow: 0 0 5px #ddd;
-    transition: all 0.3s ease-in-out;
-    border-radius: 10px;
+  }
 
-    .cardImg
-    {
-      height: 70%;
-
-      img{
-        width: 100%;
-        height: 100%;
-      }
-
-    }
-
-    .cardFooter
-    {
-      height: 30%;
-.row{margin: 0  !important;}
-      div:first-of-type
-      {
-        padding: 10px;
-    font-size: larger;
-        span 
-        {
-          margin: 0 5px;
-          padding: 0.6em !important;
-    padding-right: 0.8em  !important;
-    padding-left: .8em  !important;
-        }
-        #html 
-          {
-            background: #e2603d;
-          }
-          #css 
-          {
-            background: #2280bf;
-          }
-          #js
-          {
-            background: #e5ca47;
-          }
-      }
-    }
-
-    */ }
-
-  
 
     
   }
 
+
+
+  .overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: $bg-color;
+    z-index: 100000;
+    animation: fadeOut 0.3s;
+    display: none;
+
+    h4 {color: $orange;
+      line-height: 2em;
+      margin-top: 1.5em;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: capitalize;
+    }
+    .loadingContainer
+    {background: white;
+     border-radius: 7px;
+     width: 125px;
+     height: 125px;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform : translate(-50%,-50%);
+     box-shadow: 0 0 4px white;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+  
+     .loader
+     {
+        background: $bg-color;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin: 3px;
+        box-shadow: 0 0 2px $bg-color;
+        animation: load 1s infinite ease;
+     }
+     .loader:nth-of-type(2)
+     {	opacity: 0.7;
+       animation-delay: 0.2s}
+     .loader:nth-of-type(3)
+     {	opacity: 0.3;
+       animation-delay: 0.4s}
+     }
+    
+    }
+   
+     @keyframes load
+     {
+       0%,100%
+       {}
+       
+       50%
+       {transform: translateY(-20px);}
+  
+     }
+             
+     
+
+     @keyframes fadeOut {
+
+      from {display: block;
+        opacity: 1;
+      }
+      to {
+        
+        opacity: 0;
+        display: none;
+      }
+     }
+  
 @media(max-width:960px)
 {
   #about,#skills
@@ -312,6 +407,71 @@ background: url('./screens/game.PNG') center / cover no-repeat;
   img {
     width: 100%;
   }
+
+  #portfolio #projectsContainer .project .Data {
+    
+    transform: translateY(calc(215px + 4em));
+}
+
 }
 
 
+.button {
+  display: block;
+  width: 100px;
+  margin: 2em auto 1em;
+  text-align: center;
+  color: #fff;
+  line-height: 1;
+  position: relative;
+  font-weight: 700;
+  transition: transform 0.3s;
+  &::after {
+    content: '\2192';
+    opacity: 0;
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: all 0.3s;
+  }
+  &:hover {
+    color: white;
+    text-decoration: none;
+    transform: translate(0px, -5px);
+    &::after {
+      transform: translate(5px, -50%);
+      opacity: 1;
+    }
+  }
+}
+
+#contact 
+{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem; 
+
+  div {margin: 4rem 0;}
+
+  .contact-links a
+  {
+    text-decoration: none;
+    margin: 20px;
+    font-size: larger;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s;
+
+    i 
+    {
+      margin: 0.5rem
+    }
+
+    &:hover
+    {
+      text-shadow: 0 0 5px #fff;
+    }
+  }
+}

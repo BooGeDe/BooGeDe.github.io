@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
 /* $bg-color:#1b262c;
 $mian-nav:#3282b8;
@@ -90,6 +91,7 @@ body {
 }
 /*Aboutme*/
 #about, #skills {
+  height: fit-content;
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin: 2rem 0;
@@ -126,73 +128,24 @@ body {
   margin-right: 15px;
 }
 
-#portfolio {
+#portfolio, #playground {
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-#portfolio h3 {
+#portfolio h3, #playground h3 {
   padding-top: 5%;
 }
-#portfolio #projectsContainer {
+#portfolio #projectsContainer, #portfolio #playContainer, #playground #projectsContainer, #playground #playContainer {
   width: 100%;
   height: fit-content;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  /* 
-      border: 1px solid #e9ecef;
-      margin: 5%;
-      max-height: 410px;
-      box-shadow: 0 0 5px #ddd;
-      transition: all 0.3s ease-in-out;
-      border-radius: 10px;
-
-      .cardImg
-      {
-        height: 70%;
-
-        img{
-          width: 100%;
-          height: 100%;
-        }
-
-      }
-
-      .cardFooter
-      {
-        height: 30%;
-  .row{margin: 0  !important;}
-        div:first-of-type
-        {
-          padding: 10px;
-      font-size: larger;
-          span 
-          {
-            margin: 0 5px;
-            padding: 0.6em !important;
-      padding-right: 0.8em  !important;
-      padding-left: .8em  !important;
-          }
-          #html 
-            {
-              background: #e2603d;
-            }
-            #css 
-            {
-              background: #2280bf;
-            }
-            #js
-            {
-              background: #e5ca47;
-            }
-        }
-      }
-
-      */
 }
-#portfolio #projectsContainer .project::before {
+#portfolio #projectsContainer .project::before, #portfolio #projectsContainer .playProject::before, #portfolio #playContainer .project::before, #portfolio #playContainer .playProject::before, #playground #projectsContainer .project::before, #playground #projectsContainer .playProject::before, #playground #playContainer .project::before, #playground #playContainer .playProject::before {
   height: 100%;
   content: "";
   position: absolute;
@@ -202,16 +155,40 @@ body {
   width: 100%;
   transition: all 0.3s;
 }
-#portfolio #projectsContainer .project:hover {
+#portfolio #projectsContainer .playProject:first-of-type, #portfolio #playContainer .playProject:first-of-type, #playground #projectsContainer .playProject:first-of-type, #playground #playContainer .playProject:first-of-type {
+  background: url("./screens/toDoPNG.PNG") center/cover no-repeat;
+}
+#portfolio #projectsContainer .playProject:nth-child(2), #portfolio #playContainer .playProject:nth-child(2), #playground #projectsContainer .playProject:nth-child(2), #playground #playContainer .playProject:nth-child(2) {
+  background: url("./screens/loading.PNG") center/cover no-repeat;
+}
+#portfolio #projectsContainer .project:first-of-type, #portfolio #playContainer .project:first-of-type, #playground #projectsContainer .project:first-of-type, #playground #playContainer .project:first-of-type {
+  background: url("./screens/Ing2.PNG") center/cover no-repeat;
+}
+#portfolio #projectsContainer .project:first-of-type .Data, #portfolio #playContainer .project:first-of-type .Data, #playground #projectsContainer .project:first-of-type .Data, #playground #playContainer .project:first-of-type .Data {
+  transform: translateY(calc(82px + 4em));
+}
+#portfolio #projectsContainer .project:nth-child(2), #portfolio #playContainer .project:nth-child(2), #playground #projectsContainer .project:nth-child(2), #playground #playContainer .project:nth-child(2) {
+  background: url("./screens/D-rays2.PNG") center/cover no-repeat;
+}
+#portfolio #projectsContainer .project:nth-child(2) .Data, #portfolio #playContainer .project:nth-child(2) .Data, #playground #projectsContainer .project:nth-child(2) .Data, #playground #playContainer .project:nth-child(2) .Data {
+  transform: translateY(calc(180px + 4em));
+}
+#portfolio #projectsContainer .project:nth-child(3), #portfolio #playContainer .project:nth-child(3), #playground #projectsContainer .project:nth-child(3), #playground #playContainer .project:nth-child(3) {
+  background: url("./screens/color1.PNG") center/cover no-repeat;
+}
+#portfolio #projectsContainer .project:nth-child(3) .Data, #portfolio #playContainer .project:nth-child(3) .Data, #playground #projectsContainer .project:nth-child(3) .Data, #playground #playContainer .project:nth-child(3) .Data {
+  transform: translateY(calc(180px + 4em));
+}
+#portfolio #projectsContainer .project:hover, #portfolio #projectsContainer .playProject:hover, #portfolio #playContainer .project:hover, #portfolio #playContainer .playProject:hover, #playground #projectsContainer .project:hover, #playground #projectsContainer .playProject:hover, #playground #playContainer .project:hover, #playground #playContainer .playProject:hover {
   cursor: pointer;
 }
-#portfolio #projectsContainer .project:hover::before {
+#portfolio #projectsContainer .project:hover::before, #portfolio #projectsContainer .playProject:hover::before, #portfolio #playContainer .project:hover::before, #portfolio #playContainer .playProject:hover::before, #playground #projectsContainer .project:hover::before, #playground #projectsContainer .playProject:hover::before, #playground #playContainer .project:hover::before, #playground #playContainer .playProject:hover::before {
   background: #0000007a;
 }
-#portfolio #projectsContainer .project:hover .Data {
+#portfolio #projectsContainer .project:hover .Data, #portfolio #projectsContainer .playProject:hover .Data, #portfolio #playContainer .project:hover .Data, #portfolio #playContainer .playProject:hover .Data, #playground #projectsContainer .project:hover .Data, #playground #projectsContainer .playProject:hover .Data, #playground #playContainer .project:hover .Data, #playground #playContainer .playProject:hover .Data {
   transform: translateY(0);
 }
-#portfolio #projectsContainer .project {
+#portfolio #projectsContainer .project, #portfolio #projectsContainer .playProject, #portfolio #playContainer .project, #portfolio #playContainer .playProject, #playground #projectsContainer .project, #playground #projectsContainer .playProject, #playground #playContainer .project, #playground #playContainer .playProject {
   background-color: #fff;
   min-height: 540px;
   position: relative;
@@ -221,16 +198,98 @@ body {
   max-width: 450px;
   margin: 2em;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
-  background: url("./screens/game.PNG") center/cover no-repeat;
 }
-#portfolio #projectsContainer .project .Data {
+#portfolio #projectsContainer .project .title, #portfolio #projectsContainer .playProject .title, #portfolio #playContainer .project .title, #portfolio #playContainer .playProject .title, #playground #projectsContainer .project .title, #playground #projectsContainer .playProject .title, #playground #playContainer .project .title, #playground #playContainer .playProject .title {
+  margin: 1rem;
+}
+#portfolio #projectsContainer .project .title span, #portfolio #projectsContainer .playProject .title span, #portfolio #playContainer .project .title span, #portfolio #playContainer .playProject .title span, #playground #projectsContainer .project .title span, #playground #projectsContainer .playProject .title span, #playground #playContainer .project .title span, #playground #playContainer .playProject .title span {
+  background: #092b40;
+  padding: 0.5em;
+}
+#portfolio #projectsContainer .project .Data, #portfolio #projectsContainer .playProject .Data, #portfolio #playContainer .project .Data, #portfolio #playContainer .playProject .Data, #playground #projectsContainer .project .Data, #playground #projectsContainer .playProject .Data, #playground #playContainer .project .Data, #playground #playContainer .playProject .Data {
   position: absolute;
   bottom: 0;
   width: 100%;
   transition: transform 0.3s;
   transform: translateY(calc(150px + 4em));
 }
+#portfolio #projectsContainer .project .Data .content, #portfolio #projectsContainer .playProject .Data .content, #portfolio #playContainer .project .Data .content, #portfolio #playContainer .playProject .Data .content, #playground #projectsContainer .project .Data .content, #playground #projectsContainer .playProject .Data .content, #playground #playContainer .project .Data .content, #playground #playContainer .playProject .Data .content {
+  padding: 0 10px;
+}
+#portfolio #projectsContainer .project .Data .content span, #portfolio #projectsContainer .playProject .Data .content span, #portfolio #playContainer .project .Data .content span, #portfolio #playContainer .playProject .Data .content span, #playground #projectsContainer .project .Data .content span, #playground #projectsContainer .playProject .Data .content span, #playground #playContainer .project .Data .content span, #playground #playContainer .playProject .Data .content span {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3), 1px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 9px 20px;
+  margin-right: 0.8em;
+  border-radius: 10rem;
+  text-transform: uppercase;
+}
 
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #092B40;
+  z-index: 100000;
+  animation: fadeOut 0.3s;
+  display: none;
+}
+.overlay h4 {
+  color: #D96F32;
+  line-height: 2em;
+  margin-top: 1.5em;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: capitalize;
+}
+.overlay .loadingContainer {
+  background: white;
+  border-radius: 7px;
+  width: 125px;
+  height: 125px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 4px white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay .loadingContainer .loader {
+  background: #092B40;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 3px;
+  box-shadow: 0 0 2px #092B40;
+  animation: load 1s infinite ease;
+}
+.overlay .loadingContainer .loader:nth-of-type(2) {
+  opacity: 0.7;
+  animation-delay: 0.2s;
+}
+.overlay .loadingContainer .loader:nth-of-type(3) {
+  opacity: 0.3;
+  animation-delay: 0.4s;
+}
+
+@keyframes load {
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes fadeOut {
+  from {
+    display: block;
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
 @media (max-width: 960px) {
   #about, #skills {
     display: block;
@@ -240,6 +299,63 @@ body {
   img {
     width: 100%;
   }
+
+  #portfolio #projectsContainer .project .Data {
+    transform: translateY(calc(215px + 4em));
+  }
+}
+.button {
+  display: block;
+  width: 100px;
+  margin: 2em auto 1em;
+  text-align: center;
+  color: #fff;
+  line-height: 1;
+  position: relative;
+  font-weight: 700;
+  transition: transform 0.3s;
+}
+.button::after {
+  content: "→";
+  opacity: 0;
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: all 0.3s;
+}
+.button:hover {
+  color: white;
+  text-decoration: none;
+  transform: translate(0px, -5px);
+}
+.button:hover::after {
+  transform: translate(5px, -50%);
+  opacity: 1;
+}
+
+#contact {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+#contact div {
+  margin: 4rem 0;
+}
+#contact .contact-links a {
+  text-decoration: none;
+  margin: 20px;
+  font-size: larger;
+  font-weight: bold;
+  color: white;
+  transition: all 0.3s;
+}
+#contact .contact-links a i {
+  margin: 0.5rem;
+}
+#contact .contact-links a:hover {
+  text-shadow: 0 0 5px #fff;
 }
 
 /*# sourceMappingURL=style.css.map */
